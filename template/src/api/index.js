@@ -32,7 +32,7 @@ try {
 
 {%- endif %}
 
-{%- if asyncapi.ext('x-quantum-awslambda') and asyncapi.server(params.server).protocol() === 'mqtt' %}
+{%- if asyncapi.ext('x-quantum-awslambda') and protocol === 'mqtt' %}
 
 const spawn = require("child_process").spawn;
 const pythonProcess = spawn('python', ["./src/api/lambda/lambda.py"]);
